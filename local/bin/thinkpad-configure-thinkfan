@@ -1,0 +1,32 @@
+#!/bin/zsh
+
+sudo su root <<COMMANDS
+
+cat > /etc/thinkfan.conf <<CONFIGURATION
+tp_fan /proc/acpi/ibm/fan
+
+hwmon /sys/devices/virtual/hwmon/hwmon0/temp1_input
+hwmon /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp3_input
+hwmon /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+hwmon /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp2_input
+
+(0, 0, 35)
+(1, 33, 38)
+(2, 36, 45)
+(3, 39, 49)
+(4, 46, 58)
+(5, 50, 62)
+(7, 56, 32767)
+CONFIGURATION
+
+cat > /etc/default/thinkfan <<CONFIGURATION
+START=yes
+DAEMON_ARGS="-q -b 2"
+CONFIGURATION
+
+echo "options thinkpad_acpi fan_control=1" > /etc/modprobe.d/thinkfan_acpi.conf
+modprobe thinkpad_acpi fan_control=1
+
+service thinkfan restart
+
+COMMANDS

@@ -1,2 +1,4 @@
-#!/bin/sh
-sudo bash -c "echo level 7 > /proc/acpi/ibm/fan"
+#!/bin/zsh
+sudo su root <<COMMANDS
+echo level7 > /proc/acpi/ibm/fan
+COMMANDS
