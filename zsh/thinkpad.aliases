@@ -1,1 +1,3 @@
 alias wifi='wicd-curses'
+
+alias printpdf='lp -o fitplot -d DCP7065DN'
