@@ -17,6 +17,7 @@ cat <<PACKAGES | xargs sudo apt-get install -y
 	tpb
 	wicd
 	wicd-curses
+  xbacklight
 PACKAGES
 
 thinkpad-configure-cpufreqd
