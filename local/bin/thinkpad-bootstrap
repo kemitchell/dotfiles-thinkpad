@@ -1,9 +1,9 @@
 #!/bin/zsh
 
-sudo echo "deb http://mirrors.kernel.org/debian/ jessie main contrib non-free" >> /etc/apt/sources.list
-sudo echo "deb-src http://mirrors.kernel.org/debian/ jessie main contrib non-free" >> /etc/apt/sources.list
-sudo sort -u /etc/apt/sources.list > /etc/apt/sources.list.sorted
-sudo mv /etc/apt/sources.list.sorted /etc/apt/sources.list
+#sudo echo "deb http://mirrors.kernel.org/debian/ jessie main contrib non-free" >> /etc/apt/sources.list
+#sudo echo "deb-src http://mirrors.kernel.org/debian/ jessie main contrib non-free" >> /etc/apt/sources.list
+#sudo sort -u /etc/apt/sources.list > /etc/apt/sources.list.sorted
+#sudo mv /etc/apt/sources.list.sorted /etc/apt/sources.list
 
 sudo apt-get update
 cat <<PACKAGES | xargs sudo apt-get install -y
@@ -16,6 +16,8 @@ cat <<PACKAGES | xargs sudo apt-get install -y
 	thinkfan
 	tpb
 	wicd
+  fancontrol
+  lm-sensors
 	wicd-curses
   xbacklight
 PACKAGES
