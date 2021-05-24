@@ -7,19 +7,20 @@
 
 sudo apt-get update
 cat <<PACKAGES | xargs sudo apt-get install -y
-	acpitool
-	alsa-utils
-	cpufreqd
-	cpufrequtils
-	firmware-iwlwifi
-	sudo
-	thinkfan
-	tpb
-	wicd
-  fancontrol
-  lm-sensors
-	wicd-curses
-  xbacklight
+acpitool
+alsa-utils
+cpufreqd
+cpufrequtils
+fancontrol
+firmware-iwlwifi
+lm-sensors
+powertop
+sudo
+thinkfan
+tpb
+wicd
+wicd-curses
+xbacklight
 PACKAGES
 
 configurecpufreqd
